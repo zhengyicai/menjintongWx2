@@ -1,0 +1,35 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/login/login",
+    "pages/home/home",
+    "pages/register/register"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#66bc95",
+    "navigationBarTitleText": "嘀门禁",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "门禁码",
+        "iconPath": "images/qrCode-0.png",
+        "selectedIconPath": "images/qrCode-1.png"
+      },
+      {
+        "pagePath": "pages/home/home",
+        "text": "我的",
+        "iconPath": "images/myInfo-0.png",
+        "selectedIconPath": "images/myInfo-1.png"
+      }
+    ],
+    "color": "#666",
+    "selectedColor": "#66bc95"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,85 @@
+/* pages/home/home.wxss */
+page {
+  background-color:#f3f3f3;
+} 
+
+
+.root {
+  width: 100%;
+   height: 100%;
+   background-color: #70c7da;
+   position: relative;
+}
+
+.background-image{
+  height : 100%;
+   position: absolute;
+   width: 100%;
+   left: 0px;
+   top: 0px;
+}
+.content{
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   left: 0px;
+   top: 0px;
+}
+
+
+.imageView{
+    height:12rem;
+    width: 100%;
+    /* padding-top:50px; */
+   
+}
+
+.list-wrapper {
+  width: 100%;
+}
+
+/* 横着的分割View样式 */
+/*分割线样式*/
+.div-line{
+  background: #E0E3DA;
+  width: 100%;
+  height: 3rpx;
+ 
+  
+  
+}
+
+.list-item {
+  width: 100%;
+  height: 110rpx;
+  background-color: white;
+  margin-bottom: 1px;
+}
+
+.list-item_active {
+  background-color:#E0E3DA;
+}
+
+.item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 110rpx;
+}
+.item-text {
+  position: fixed;
+  left: 100rpx;
+  font-size: 38rpx;
+}
+.item-array {
+  position: fixed;
+  right: 50rpx;
+  font-size: 38rpx;
+}
+
+.item-image {
+  position: fixed;
+  left: 50rpx;
+  width: 40rpx;
+  height: 40rpx;
+}

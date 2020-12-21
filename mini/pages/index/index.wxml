@@ -1,0 +1,72 @@
+<view class="page" style="height: 100%;over-">
+  
+     <view class="box">
+       <!--pages/index/index.wxml-->
+      <view class="swiper-tab"> 
+      <view style="pointer-events: {{none1}};"  class="one tab-item {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">扫码开锁</view> 
+      <view style="pointer-events: {{none1}};"  disabled="disabled" class="two tab-item {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">远程开锁</view> 
+ 
+      </view> 
+  
+      <swiper current="{{currentTab}}" class="swiper" duration="200" style="height:{{winHeight - 40}}px" bindchange="bindChange"> 
+            <swiper-item> 
+           
+              <view wx-if="{{phone!='' && phone1!=''}}">
+              <view style="color:#666;font-size:14px;margin-top:10px;">请将二维码靠近镜头10厘米位置扫描开锁</view> 
+              <view class="divLine"></view>
+              <view >
+                    <view style="text-align:center">
+                      <canvas  class='canvas' style="width:{{qrcodeWidth}}px; height:{{qrcodeWidth}}px; margin:30px auto;display:{{displayOne}}" canvas-id='canvas' bindlongtap='save'></canvas>
+                      
+                    </view>
+                    <view style="color:#66bc95" bindtap="createData"  >
+                      <button disabled="{{disabled}}" style="background-color:white"><image style="width:15px;height:15px" src="/images/fresh.png"></image> 刷新</button>
+                    </view>
+                    <view style="color:#666;font-size:14px;">
+                        门禁码{{minuti}}分钟后过期，过期请重新刷新
+                    </view>
+              </view>
+              </view>
+              <view style="color:#666;font-size:14px;margin-top:200px" wx-if="{{phone==''}}">
+                    请先绑定用户
+              </view>
+              
+              <view style="color:#666;font-size:14px;margin-top:200px" wx-if="{{text1!=''}}">
+                    {{text1}}
+              </view>
+
+            </swiper-item> 
+            <swiper-item> 
+             <scroll-view   scroll-y="{{true}}" style="height: {{clientHeight?clientHeight+'px':'auto'}}" bindscrolltolower="scrollbot">  
+             <view wx-if="{{phone!='' && phone1!=''}}" >
+                <view class="page-section-spacing">
+                    <view class="flex-wrp" style="flex-direction:row;">
+                      <view style="float:left" class="flex-item1 demo-text-1" wx:for="{{equList}}"  wx:for-item="info">
+                            <image src="/images/qrCode-0.png"></image>
+                            <view style="font-size:12px;text-align:left"> 
+                              <view class="equ2" style="text-align: left;" >小区:{{info.communityName}}</view>
+                              <view class="equ2" style="text-align: left;">门禁地址:{{info.equipmentName}}</view>
+                              <view class="equ2" style="text-align: left;" >在线状态:<span wx:if="{{info.status=='10'}}" style='color:green'>在线</span><span wx:if="{{info.status=='20'|| info.status=='30' }}" style='color:red'>离线</span></view>
+                              <view class="equ2" style="text-align: left;">远程开锁:<switch style="zoom:.7" checked="{{switchCho}}" data-bean="{{info}}"  bindchange="switch1Change"/></view>
+                            </view>
+                      </view>
+
+                    </view>
+                  </view>
+              </view>
+              <view style="color:#666;font-size:14px;margin-top:200px" wx-if="{{phone==''}}">
+                    请先绑定用户
+              </view>
+              
+              <view style="color:#666;font-size:14px;margin-top:200px" wx-if="{{text1!=''}}">
+                    {{text1}}
+              </view>
+              </scroll-view>
+            </swiper-item> 
+          
+      </swiper>
+    </view>
+    <loading hidden="{{hidden}}">{{loadingText}}</loading>
+   
+	
+</view>

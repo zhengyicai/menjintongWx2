@@ -1,0 +1,79 @@
+<!--pages/home/home.wxml-->
+<view>
+  <view wx-if="{{showImg==0}}">
+      <view style="text-align:center;margin-top:70px">
+          <image src="{{imgUrl}}" style="width:70px;height:70px;border-radius:70px"></image>
+      </view>
+      <view>
+          <view   style="margin-left:60px;color:#666">
+                申请获取以下权限
+          </view>
+          <view  style="margin-left:60px;color:#666">
+                获取你的公开信息（昵称、头像等）
+          </view>
+          <button style="background-color:#66bc95; color:white;width:300px;margin-top:20px;border-radius:5px;" wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button>
+        </view>
+    </view>   
+    <view wx-if="{{showImg==1}}">
+        <view style="text-align:center;">
+          
+
+          <view class="imageView">
+
+
+          <view class="root">
+            <image class='background-image' src='/images/bg-p1.png' mode="aspectFill"></image>
+            <view class="content">
+            <image src="{{imgUrl}}" style="width:70px;height:70px;border-radius:70px;margin-top:50px"></image>
+          <view>{{nickName}}</view>
+            </view>
+          </view>
+          
+          </view>
+         
+           <view style="text-align:right;font-size:16px; margin:10px 0px;display:flex;align:right; justify-content: space-between; ">
+                <view style="width:20%"></view>
+                 <view style="width:80%">
+                绑定手机号：<span style="font-size:14px;line-height:28px;width:90px;text-align:center">{{phone}}</span>
+                <navigator  style="width:35px;float:right ; height:24px;background-color:#66bc95;border-radius:5px; text-alig:center;  margin-left:5px; margin-right:5px; color:white" url="../login/login">更换</navigator>
+                </view>
+           </view>
+          
+          <view class="list-wrapper">
+            <block>
+              <!-- <navigator url="../register/register" class="list-item" style="text-decoration:">
+                <view class='item'>
+                  <image class='item-image' src='/images/myInfo-0.png'></image>
+                  <text class="item-text">绑定住户</text>
+                  <text class='item-array'>></text>
+                </view>
+                <view class="div-line"></view>
+              </navigator> -->
+           
+              <navigator class="list-item" >
+                 <view class="section">
+                  <picker bindchange="bindPickerChange" range-key="{{'identityNo'}}" value="{{index}}" range="{{array}}">
+                    <view class="picker">
+                       <view class='item'>
+                          <image class='item-image' src='/images/qrCode-0.png'></image>
+                          <text class="item-text">切换小区</text>
+                          <text class='item-array' ><text style="font-size:14px">{{communityNameCho}}</text>  ></text>
+                        </view>
+                        <view class="div-line"></view>
+                    </view>
+                  </picker>
+                </view>
+               
+              </navigator>
+            </block>
+          </view>
+      </view>
+
+
+     
+      
+    </view> 
+  
+
+</view>
+

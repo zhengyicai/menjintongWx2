@@ -1,0 +1,90 @@
+/**index.wxss**/
+
+page{
+  background-color: #66bc95;
+}
+.box{
+          width: 18rem;
+          height: 550px;
+          background-color: white;
+          margin: 1rem auto;
+          border-radius: 5px 5px;
+          padding:10px 30px;
+          
+         
+
+}
+
+.QRCode{
+  width:200px;
+  height: 200px;
+
+}
+
+.equ{
+  width:200px;
+  
+}
+
+.flex-item1{
+  width: 50%;
+  padding-top:20px;
+ 
+  
+
+}
+.equ2{
+  
+  margin-left:10px;
+  margin-top:3px;
+
+}
+
+swiper-item {
+  overflow: scroll;
+}
+
+.flex-item1 image{
+  width:70px;
+  height: 70px;
+}
+.divLine{
+ background: #66bc95;
+ width: 70%;
+margin: 5px auto;
+ height:2rpx;
+}
+.swiper-tab{ 
+ width: 100%; 
+ text-align: center; 
+ line-height: 80rpx; 
+ /* border-bottom: 1px solid #000;  */
+ display: flex; 
+ flex-direction: row; 
+ justify-content: center; 
+} 
+.tab-item{ 
+ flex: 1; 
+ font-size: 30rpx; 
+ display: inline-block;  
+ color: #777777; 
+ 
+ border:1px solid #66bc95;
+} 
+
+.one{
+  border-radius: 5px 0px 0px 5px; 
+}
+
+.two{
+  border-radius: 0px 5px 5px 0px; 
+}
+.on{ 
+ color: white; 
+ background-color: #66bc95;
+} 
+.swiper{ display: block;  overflow: hidden; } 
+.swiper view{ 
+ text-align: center; 
+ 
+}
